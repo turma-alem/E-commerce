@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import errorHandler from '../src/middleware/errorHandler';
+
 
 // Configurações de variáveis de ambiente
 dotenv.config();
@@ -16,6 +18,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
+
+app.use(errorHandler)
 
 // Inicializando o servidor
 app.listen(port, () => {
