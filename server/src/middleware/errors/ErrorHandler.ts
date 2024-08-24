@@ -1,5 +1,5 @@
 import { ErrorRequestHandler } from 'express';
-import HttpException from "../errors/HttpException";
+import HttpException from "./HttpException";
 
 const errorHandler: ErrorRequestHandler = async (err, _req, res, next) => {
   const { status, message } = err as HttpException;
